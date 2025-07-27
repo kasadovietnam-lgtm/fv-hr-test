@@ -1,90 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FV-HR GROUP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FV-HRグループ</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Noto Sans JP', sans-serif;
-      background-color: #fff;
-      color: #333;
-    }
-    header {
-      background-color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.8em 1.5em;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .logo {
-      height: 40px;
-    }
-    nav {
-      display: flex;
-      gap: 1em;
-      align-items: center;
-    }
-    .lang-btn, .contact-btn {
-      padding: 0.4em 0.8em;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: white;
-      cursor: pointer;
-      font-size: 0.9em;
-    }
-    .contact-btn {
-      background-color: #007BFF;
-      color: white;
-      border: none;
-    }
-    .banner {
-      width: 100%;
-      height: auto;
-    }
-    section {
-      padding: 2em 1.5em;
-    }
-    img.section-img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
+    body { font-family: sans-serif; margin: 0; padding: 0; line-height: 1.6; background-color: #f9f9f9; }
+    header, section, footer { padding: 20px; max-width: 960px; margin: auto; }
+    header { background-color: #004080; color: white; text-align: center; padding-bottom: 40px; }
+    nav { text-align: center; background: #fff; padding: 10px 0; border-bottom: 1px solid #ccc; }
+    nav a { margin: 0 15px; color: #004080; text-decoration: none; font-weight: bold; }
+    .language-switch { margin-top: 10px; text-align: center; }
+    .language-switch button { margin: 0 5px; padding: 5px 10px; font-weight: bold; cursor: pointer; }
+    h2 { color: #004080; margin-top: 40px; }
+    .lang { font-size: 0.9em; color: #666; margin-bottom: 5px; }
+    .section { background-color: #fff; border-radius: 8px; padding: 20px; margin: 20px auto; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+    .section img { width: 100%; max-height: 300px; object-fit: cover; border-radius: 4px; margin-bottom: 15px; }
+    .lang-ja { display: block; }
+    .lang-vi { display: none; }
   </style>
+  <script>
+    function switchLanguage(lang) {
+      const jaElements = document.querySelectorAll('.lang-ja');
+      const viElements = document.querySelectorAll('.lang-vi');
+      jaElements.forEach(el => el.style.display = lang === 'ja' ? 'block' : 'none');
+      viElements.forEach(el => el.style.display = lang === 'vi' ? 'block' : 'none');
+    }
+  </script>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="FV-HR GROUP Logo" class="logo" />
-    <nav>
-      <button class="lang-btn">日本語</button>
-      <button class="lang-btn">Tiếng Việt</button>
-      <a href="https://friday-vj.com/#contact"><button class="contact-btn">お問い合わせ</button></a>
-    </nav>
+    <img src="top-banner.png" alt="トップイメージ" style="width:100%; max-height:400px; object-fit:cover; border-bottom: 4px solid #004080;">
+    <h1>FV-HRグループ</h1>
+    <p>新たな可能性を求めて、ベトナムの力を</p>
+    <div class="language-switch">
+      <button onclick="switchLanguage('ja')">日本語</button>
+      <button onclick="switchLanguage('vi')">Tiếng Việt</button>
+    </div>
   </header>
 
-  <img src="top-banner.png" alt="Top Banner" class="banner"/>
+  <nav>
+    <a href="#service">サービス紹介</a>
+    <a href="#candidates">候補人材</a>
+    <a href="#flow">採用の流れ</a>
+    <a href="#about">会社情報</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
 
-  <section>
-    <img src="section-about.png" alt="About Us" class="section-img"/>
+  <section class="section" id="service">
+    <h2>サービス紹介</h2>
+    <img src="section-service.png" alt="サービスについて">
+    <div class="lang-ja">
+      <p>技能実習生や特定技能人材の紹介、ベトナム進出のサポート、現地教育支援まで、幅広く対応しています。</p>
+    </div>
+    <div class="lang-vi">
+      <p>Chúng tôi cung cấp dịch vụ giới thiệu thực tập sinh kỹ năng, lao động kỹ năng đặc định, hỗ trợ mở rộng sang Việt Nam và hỗ trợ đào tạo tại địa phương.</p>
+    </div>
   </section>
-  <section>
-    <img src="section-service.png" alt="Service" class="section-img"/>
+
+  <section class="section" id="candidates">
+    <h2>候補人材について</h2>
+    <img src="section-candidate.png" alt="候補人材について">
+    <div class="lang-ja">
+      <p>日本語能力・専門技術・経験などを兼ね備えた信頼できる人材を多数ご紹介可能です。ご希望に応じて候補者を選定しオンラインやベトナム現地での面接などを対応いたします。</p>
+    </div>
+    <div class="lang-vi">
+      <p>Chúng tôi có thể giới thiệu nhiều ứng viên đáng tin cậy với khả năng tiếng Nhật, kỹ năng chuyên môn và kinh nghiệm thực tiễn. Dưới đây là một số hồ sơ ứng viên.</p>
+    </div>
   </section>
-  <section>
-    <img src="section-candidate.png" alt="Candidates" class="section-img"/>
+
+  <section class="section" id="flow">
+    <h2>求人から採用までの流れ</h2>
+    <img src="section-flow.jpg" alt="求人から採用までの流れ">
+    <div class="lang-ja">
+      <p>①求人ヒアリング → ②候補者の選定・面接 → ③内定 → ④ビザ・渡航手配 → ⑤入社後フォローまでワンストップで対応します。</p>
+    </div>
+    <div class="lang-vi">
+      <p>① Lắng nghe nhu cầu tuyển dụng → ② Tuyển chọn & phỏng vấn ứng viên → ③ Quyết định tuyển dụng → ④ Hỗ trợ visa & di chuyển → ⑤ Theo dõi sau khi vào làm.</p>
+    </div>
   </section>
-  <section>
-    <img src="section-flow.jpg" alt="Flow" class="section-img"/>
+
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <img src="section-about.png" alt="About Us">
+    <div class="lang-ja">
+      <p>FV-HRグループは、ベトナムでの長年の活動を通して培ったネットワークと経験を活かし、ベトナムと日本を結ぶ人材・ビジネス支援の架け橋として、信頼と実績をもとに活動しています。</p>
+    </div>
+    <div class="lang-vi">
+      <p>FV-HR Group hoạt động như một cầu nối giữa Việt Nam và Nhật Bản trong lĩnh vực hỗ trợ nhân lực và kinh doanh, dựa trên sự tin cậy và thành tích thực tế.</p>
+    </div>
   </section>
-  <section>
-    <img src="section-contact.png" alt="Contact" class="section-img"/>
+
+  <section class="section" id="contact">
+    <h2>お問い合わせ</h2>
+    <img src="section-contact.png" alt="お問い合わせ">
+    <div class="lang-ja">
+      <p>ご希望の職種・人数・時期などをお知らせいただければ、最適な人材をご紹介します。お気軽にご相談ください。</p>
+    </div>
+    <div class="lang-vi">
+      <p>Hãy liên hệ với chúng tôi! Chúng tôi sẽ giới thiệu nhân lực phù hợp theo ngành nghề, số lượng và thời gian mà bạn yêu cầu.</p>
+    </div>
   </section>
+
+  <footer>
+    <p style="text-align:center; color: #666;">&copy; 2025 FRIDAY, INC. FV-HR Group. All rights reserved.</p>
+  </footer>
 </body>
 </html>
