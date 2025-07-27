@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FV-HRグループ</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; line-height: 1.6; background-color: #f9f9f9; }
+    header, section, footer { padding: 20px; max-width: 960px; margin: auto; }
+    header { background-color: #004080; color: white; text-align: center; padding-bottom: 40px; }
+    nav { text-align: center; background: #fff; padding: 10px 0; border-bottom: 1px solid #ccc; }
+    nav a { margin: 0 15px; color: #004080; text-decoration: none; font-weight: bold; }
+    .language-switch { margin-top: 10px; text-align: center; }
+    .language-switch button { margin: 0 5px; padding: 5px 10px; font-weight: bold; cursor: pointer; }
+    h2 { color: #004080; margin-top: 40px; }
+    .lang { font-size: 0.9em; color: #666; margin-bottom: 5px; }
+    .section { background-color: #fff; border-radius: 8px; padding: 20px; margin: 20px auto; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+    .section img { width: 100%; max-height: 300px; object-fit: cover; border-radius: 4px; margin-bottom: 15px; }
+    .lang-ja { display: block; }
+    .lang-vi { display: none; }
+  </style>
+  <script>
+    function switchLanguage(lang) {
+      const jaElements = document.querySelectorAll('.lang-ja');
+      const viElements = document.querySelectorAll('.lang-vi');
+      jaElements.forEach(el => el.style.display = lang === 'ja' ? 'block' : 'none');
+      viElements.forEach(el => el.style.display = lang === 'vi' ? 'block' : 'none');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="ChatGPT Image 2025年7月27日 16_08_12.png" alt="FV-HRグループ トップ画像" style="width:100%; max-height:400px; object-fit:cover; border-bottom: 4px solid #004080;">
+    <h1>FV-HRグループ</h1>
+    <p>新たな可能性を求めて、ベトナムの力を</p>
+    <div class="language-switch">
+      <button onclick="switchLanguage('ja')">日本語</button>
+      <button onclick="switchLanguage('vi')">Tiếng Việt</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#service">サービス紹介</a>
+    <a href="#candidates">候補人材</a>
+    <a href="#flow">採用の流れ</a>
+    <a href="#about">会社情報</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+
+  <section class="section" id="service">
+    <h2>サービス紹介</h2>
+    <img src="https://images.unsplash.com/photo-1581091870620-c46aa0ec6fc0" alt="サービス紹介イメージ">
+    <div class="lang-ja">
+      <p>技能実習生や特定技能人材の紹介、ベトナム進出のサポート、現地教育支援まで、幅広く対応しています。</p>
+    </div>
+    <div class="lang-vi">
+      <p>Chúng tôi cung cấp dịch vụ giới thiệu thực tập sinh kỹ năng, lao động kỹ năng đặc định, hỗ trợ mở rộng sang Việt Nam và hỗ trợ đào tạo tại địa phương.</p>
+    </div>
+  </section>
+
+  <section class="section" id="candidates">
+    <h2>候補人材の紹介</h2>
+    <img src="https://images.unsplash.com/photo-1600880292089-90e4ce3e19f0" alt="候補人材イメージ">
+    <div class="lang-ja">
+      <p>日本語能力・専門技術・経験などを兼ね備えた信頼できる人材を多数ご紹介可能です。実際の候補者プロフィールを一部ご紹介します。</p>
+    </div>
+    <div class="lang-vi">
+      <p>Chúng tôi có thể giới thiệu nhiều ứng viên đáng tin cậy với khả năng tiếng Nhật, kỹ năng chuyên môn và kinh nghiệm thực tiễn. Dưới đây là một số hồ sơ ứng viên.</p>
+    </div>
+  </section>
+
+  <section class="section" id="flow">
+    <h2>求人から採用までの流れ</h2>
+    <img src="https://images.unsplash.com/photo-1590650046871-92c887180603" alt="採用フローイメージ">
+    <div class="lang-ja">
+      <p>①求人ヒアリング → ②候補者の選定・面接 → ③内定 → ④ビザ・渡航手配 → ⑤入社後フォローまでワンストップで対応します。</p>
+    </div>
+    <div class="lang-vi">
+      <p>① Lắng nghe nhu cầu tuyển dụng → ② Tuyển chọn & phỏng vấn ứng viên → ③ Quyết định tuyển dụng → ④ Hỗ trợ visa & di chuyển → ⑤ Theo dõi sau khi vào làm.</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <div class="lang-ja">
+      <p>FV-HRグループは、ベトナムと日本を結ぶ人材・ビジネス支援の架け橋として、信頼と実績をもとに活動しています。</p>
+    </div>
+    <div class="lang-vi">
+      <p>FV-HR Group hoạt động như một cầu nối giữa Việt Nam và Nhật Bản trong lĩnh vực hỗ trợ nhân lực và kinh doanh, dựa trên sự tin cậy và thành tích thực tế.</p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>お問い合わせ</h2>
+    <div class="lang-ja">
+      <p>お気軽にご相談ください。ご希望職種・人数・時期などをお知らせいただければ、最適な人材をご紹介します。</p>
+    </div>
+    <div class="lang-vi">
+      <p>Hãy liên hệ với chúng tôi! Chúng tôi sẽ giới thiệu nhân lực phù hợp theo ngành nghề, số lượng và thời gian mà bạn yêu cầu.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p style="text-align:center; color: #666;">&copy; 2025 FV-HR Group. All rights reserved.</p>
+  </footer>
+</body>
+</html>
