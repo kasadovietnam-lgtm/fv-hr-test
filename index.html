@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -30,6 +31,17 @@
       border-radius: 4px;
       cursor: pointer;
       text-decoration: none;
+      font-weight: bold;
+    }
+    nav {
+      background: #004080;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
       font-weight: bold;
     }
     section {
@@ -70,7 +82,17 @@
     </div>
   </header>
 
-  <section>
+  <img src="top-banner.png" alt="トップバナー" style="width:100%; height:auto;">
+
+  <nav>
+    <a href="#service">サービス紹介</a>
+    <a href="#candidate">候補人材紹介</a>
+    <a href="#about">会社概要</a>
+    <a href="#flow">採用までの流れ</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+
+  <section id="service">
     <img src="section-service.png" alt="section-service">
     <h2 class="lang-ja">サービス紹介</h2>
     <h2 class="lang-vi" style="display:none;">Giới thiệu dịch vụ</h2>
@@ -78,7 +100,7 @@
     <p class="lang-vi" style="display:none;">Chúng tôi hỗ trợ giới thiệu thực tập sinh, lao động kỹ năng, mở rộng kinh doanh và đào tạo tại Việt Nam.</p>
   </section>
 
-  <section>
+  <section id="candidate">
     <img src="section-candidate.png" alt="section-candidate">
     <h2 class="lang-ja">候補人材紹介</h2>
     <h2 class="lang-vi" style="display:none;">Giới thiệu ứng viên</h2>
@@ -86,7 +108,7 @@
     <p class="lang-vi" style="display:none;">Chúng tôi có thể giới thiệu nhiều ứng viên có khả năng tiếng Nhật và kinh nghiệm thực tế.</p>
   </section>
 
-  <section>
+  <section id="about">
     <img src="section-about.png" alt="会社概要">
     <h2 class="lang-ja">会社概要</h2>
     <h2 class="lang-vi" style="display:none;">Giới thiệu công ty</h2>
@@ -94,7 +116,15 @@
     <p class="lang-vi" style="display:none;">FV-HR Group hỗ trợ kết nối nhân lực giữa Việt Nam và Nhật Bản với uy tín và thành tích thực tế.</p>
   </section>
 
-  <section>
+  <section id="flow">
+    <img src="section-flow.jpg" alt="求人から採用までの流れ">
+    <h2 class="lang-ja">求人から採用までの流れ</h2>
+    <h2 class="lang-vi" style="display:none;">Quy trình tuyển dụng</h2>
+    <p class="lang-ja">ご相談から人材紹介、面接、採用までワンストップでサポートいたします。</p>
+    <p class="lang-vi" style="display:none;">Tư vấn, giới thiệu, phỏng vấn và tuyển dụng - hỗ trợ toàn diện một cửa.</p>
+  </section>
+
+  <section id="contact">
     <img src="section-contact.png" alt="お問い合わせ">
     <h2 class="lang-ja">お問い合わせ</h2>
     <h2 class="lang-vi" style="display:none;">Liên hệ</h2>
