@@ -6,6 +6,8 @@
   <title>FV-HRグループ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    .lang-ja { display: none; }
+    .lang-vi { display: none; }
     body { margin: 0; font-family: sans-serif; background: #f9f9f9; }
     header {
       background: #ffffff;
@@ -215,6 +217,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", function() {
+      switchLang('ja');
       const slides = document.querySelectorAll('.banner-slide');
       if (slides.length > 0) {
         slides[0].classList.add('active');
@@ -222,12 +225,14 @@
       }
     });
 
+    
     function switchLang(lang) {
       const jp = document.querySelectorAll('.lang-ja');
       const vi = document.querySelectorAll('.lang-vi');
-      jp.forEach(el => el.style.display = lang === 'ja' ? 'inline-block' : 'none');
-      vi.forEach(el => el.style.display = lang === 'vi' ? 'inline-block' : 'none');
+      jp.forEach(el => el.style.display = lang === 'ja' ? 'block' : 'none');
+      vi.forEach(el => el.style.display = lang === 'vi' ? 'block' : 'none');
     }
+    
   </script>
 </body>
 </html>
