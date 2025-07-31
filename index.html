@@ -75,24 +75,26 @@
     .banner-container {
       position: relative;
       width: 100%;
-      height: auto;
+      height: 300px;
       overflow: hidden;
+      background: #000;
     }
     .banner-slide {
       position: absolute;
       width: 100%;
-      height: auto;
+      height: 100%;
       top: 0;
       left: 0;
       display: none;
+      z-index: 0;
     }
     .banner-slide.active {
       display: block;
+      z-index: 1;
     }
     .banner-slide img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 100%;
       object-fit: cover;
     }
     .banner-text {
@@ -103,32 +105,9 @@
       font-size: 2em;
       font-weight: bold;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+      z-index: 2;
     }
   </style>
-  <script>
-    let currentBanner = 0;
-    function showNextBanner() {
-      const slides = document.querySelectorAll('.banner-slide');
-      slides[currentBanner].classList.remove('active');
-      currentBanner = (currentBanner + 1) % slides.length;
-      slides[currentBanner].classList.add('active');
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-      const slides = document.querySelectorAll('.banner-slide');
-      if (slides.length > 0) {
-        slides[0].classList.add('active');
-        setInterval(showNextBanner, 3000);
-      }
-    });
-
-    function switchLang(lang) {
-      const jp = document.querySelectorAll('.lang-ja');
-      const vi = document.querySelectorAll('.lang-vi');
-      jp.forEach(el => el.style.display = lang === 'ja' ? 'block' : 'none');
-      vi.forEach(el => el.style.display = lang === 'vi' ? 'block' : 'none');
-    }
-  </script>
 </head>
 <body>
   <header>
@@ -203,5 +182,30 @@
     <p class="lang-vi">Hãy liên hệ với chúng tôi về nhu cầu tuyển dụng của bạn.</p>
     <a href="https://friday-vj.com/#contact" class="contact-button" target="_blank">お問い合わせ</a>
   </section>
+
+  <script>
+    let currentBanner = 0;
+    function showNextBanner() {
+      const slides = document.querySelectorAll('.banner-slide');
+      slides[currentBanner].classList.remove('active');
+      currentBanner = (currentBanner + 1) % slides.length;
+      slides[currentBanner].classList.add('active');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const slides = document.querySelectorAll('.banner-slide');
+      if (slides.length > 0) {
+        slides[0].classList.add('active');
+        setInterval(showNextBanner, 3000);
+      }
+    });
+
+    function switchLang(lang) {
+      const jp = document.querySelectorAll('.lang-ja');
+      const vi = document.querySelectorAll('.lang-vi');
+      jp.forEach(el => el.style.display = lang === 'ja' ? 'block' : 'none');
+      vi.forEach(el => el.style.display = lang === 'vi' ? 'block' : 'none');
+    }
+  </script>
 </body>
 </html>
