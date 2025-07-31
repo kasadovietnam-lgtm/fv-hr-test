@@ -78,42 +78,56 @@
       height: auto;
       overflow: hidden;
     }
-    .banner-container img {
+    .banner-slide {
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: auto;
+      top: 0;
+      left: 0;
       display: none;
+    }
+    .banner-slide.active {
+      display: block;
+    }
+    .banner-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
       object-fit: cover;
     }
-    .banner-container img.active {
-      display: block;
+    .banner-text {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     }
   </style>
   <script>
+    let currentBanner = 0;
+    function showNextBanner() {
+      const slides = document.querySelectorAll('.banner-slide');
+      slides[currentBanner].classList.remove('active');
+      currentBanner = (currentBanner + 1) % slides.length;
+      slides[currentBanner].classList.add('active');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const slides = document.querySelectorAll('.banner-slide');
+      if (slides.length > 0) {
+        slides[0].classList.add('active');
+        setInterval(showNextBanner, 3000);
+      }
+    });
+
     function switchLang(lang) {
       const jp = document.querySelectorAll('.lang-ja');
       const vi = document.querySelectorAll('.lang-vi');
       jp.forEach(el => el.style.display = lang === 'ja' ? 'block' : 'none');
       vi.forEach(el => el.style.display = lang === 'vi' ? 'block' : 'none');
     }
-
-    let currentBanner = 0;
-    function showNextBanner() {
-      const banners = document.querySelectorAll('.banner-container img');
-      banners[currentBanner].classList.remove('active');
-      currentBanner = (currentBanner + 1) % banners.length;
-      banners[currentBanner].classList.add('active');
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-      const banners = document.querySelectorAll('.banner-container img');
-      if (banners.length > 0) {
-        banners[0].classList.add('active');
-        setInterval(showNextBanner, 3000);
-      }
-    });
   </script>
 </head>
 <body>
@@ -127,9 +141,18 @@
   </header>
 
   <div class="banner-container">
-    <img src="top-banner-1.png" alt="バナー1">
-    <img src="top-banner-2.png" alt="バナー2">
-    <img src="top-banner-3.png" alt="バナー3">
+    <div class="banner-slide">
+      <img src="top-banner-1.png" alt="バナー1">
+      <div class="banner-text">新たな可能性を求めて、ベトナムの力を</div>
+    </div>
+    <div class="banner-slide">
+      <img src="top-banner-2.png" alt="バナー2">
+      <div class="banner-text">豊富な派遣実績で安心</div>
+    </div>
+    <div class="banner-slide">
+      <img src="top-banner-3.png" alt="バナー3">
+      <div class="banner-text">多くの皆様に信頼いただいています</div>
+    </div>
   </div>
 
   <nav>
