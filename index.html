@@ -115,32 +115,53 @@
     <div class="right-buttons">
       <button onclick="switchLang('ja')">日本語</button>
       <button onclick="switchLang('vi')">Tiếng Việt</button>
-      <a href="https://friday-vj.com/#contact" target="_blank">お問い合わせ</a>
+      <a href="https://friday-vj.com/#contact" class="contact-button lang-ja" target="_blank">お問い合わせ</a>
+      <a href="https://friday-vj.com/#contact" class="contact-button lang-vi" target="_blank">Liên hệ</a>
     </div>
   </header>
 
   <div class="banner-container">
     <div class="banner-slide">
       <img src="top-banner-1.png" alt="バナー1">
-      <div class="banner-text">新たな可能性を求めて、ベトナムの力を</div>
+      <div class="banner-text">
+        <span class="lang-ja">新たな可能性を求めて、ベトナムの力を</span>
+        <span class="lang-vi">Tìm kiếm tiềm năng mới, sức mạnh từ Việt Nam</span>
+      </div>
     </div>
     <div class="banner-slide">
       <img src="top-banner-2.png" alt="バナー2">
-      <div class="banner-text">豊富な派遣実績で安心</div>
+      <div class="banner-text">
+        <span class="lang-ja">豊富な派遣実績で安心</span>
+        <span class="lang-vi">Kinh nghiệm phái cử phong phú, an tâm tuyệt đối</span>
+      </div>
     </div>
     <div class="banner-slide">
       <img src="top-banner-3.png" alt="バナー3">
-      <div class="banner-text">多くの皆様に信頼いただいています</div>
+      <div class="banner-text">
+        <span class="lang-ja">多くの皆様に信頼いただいています</span>
+        <span class="lang-vi">Được nhiều khách hàng tin tưởng</span>
+      </div>
     </div>
   </div>
 
-  <nav>
+  
+<nav>
+  <span class="lang-ja">
     <a href="#service">サービス紹介</a>
     <a href="#candidate">候補人材紹介</a>
     <a href="#about">会社概要</a>
     <a href="#flow">採用までの流れ</a>
     <a href="#contact">お問い合わせ</a>
-  </nav>
+  </span>
+  <span class="lang-vi">
+    <a href="#service">Giới thiệu dịch vụ</a>
+    <a href="#candidate">Giới thiệu ứng viên</a>
+    <a href="#about">Giới thiệu công ty</a>
+    <a href="#flow">Quy trình tuyển dụng</a>
+    <a href="#contact">Liên hệ</a>
+  </span>
+</nav>
+
 
   <section id="service">
     <img src="section-service.png" alt="section-service">
@@ -180,7 +201,8 @@
     <h2 class="lang-vi">Liên hệ</h2>
     <p class="lang-ja">ご希望の職種や人数など、お気軽にご相談ください。</p>
     <p class="lang-vi">Hãy liên hệ với chúng tôi về nhu cầu tuyển dụng của bạn.</p>
-    <a href="https://friday-vj.com/#contact" class="contact-button" target="_blank">お問い合わせ</a>
+    <a href="https://friday-vj.com/#contact" class="contact-button lang-ja" target="_blank">お問い合わせ</a>
+    <a href="https://friday-vj.com/#contact" class="contact-button lang-vi" target="_blank">Liên hệ</a>
   </section>
 
   <script>
@@ -203,8 +225,8 @@
     function switchLang(lang) {
       const jp = document.querySelectorAll('.lang-ja');
       const vi = document.querySelectorAll('.lang-vi');
-      jp.forEach(el => el.style.display = lang === 'ja' ? 'block' : 'none');
-      vi.forEach(el => el.style.display = lang === 'vi' ? 'block' : 'none');
+      jp.forEach(el => el.style.display = lang === 'ja' ? 'inline-block' : 'none');
+      vi.forEach(el => el.style.display = lang === 'vi' ? 'inline-block' : 'none');
     }
   </script>
 </body>
