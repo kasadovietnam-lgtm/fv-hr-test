@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -71,6 +72,19 @@
       border-radius: 5px;
       font-weight: bold;
     }
+    .banner-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .banner-container img {
+      width: 100%;
+      height: auto;
+      display: none;
+    }
+    .banner-container img.active {
+      display: block;
+    }
   </style>
   <script>
     function switchLang(lang) {
@@ -79,6 +93,19 @@
       jp.forEach(el => el.style.display = lang === 'ja' ? 'block' : 'none');
       vi.forEach(el => el.style.display = lang === 'vi' ? 'block' : 'none');
     }
+
+    let currentBanner = 0;
+    function showNextBanner() {
+      const banners = document.querySelectorAll('.banner-container img');
+      banners[currentBanner].classList.remove('active');
+      currentBanner = (currentBanner + 1) % banners.length;
+      banners[currentBanner].classList.add('active');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('.banner-container img')[0].classList.add('active');
+      setInterval(showNextBanner, 5000);
+    });
   </script>
 </head>
 <body>
@@ -91,7 +118,11 @@
     </div>
   </header>
 
-  <img src="top-banner.png" alt="トップバナー" style="width:100%; height:auto;">
+  <div class="banner-container">
+    <img src="top-banner-1.png" alt="バナー1">
+    <img src="top-banner-2.png" alt="バナー2">
+    <img src="top-banner-3.png" alt="バナー3">
+  </div>
 
   <nav>
     <a href="#service">サービス紹介</a>
@@ -104,41 +135,41 @@
   <section id="service">
     <img src="section-service.png" alt="section-service">
     <h2 class="lang-ja">サービス紹介</h2>
-    <h2 class="lang-vi" style="display:none;">Giới thiệu dịch vụ</h2>
+    <h2 class="lang-vi">Giới thiệu dịch vụ</h2>
     <p class="lang-ja">技能実習生や特定技能人材の紹介、ベトナム進出のサポート、現地教育支援まで幅広く対応しています。</p>
-    <p class="lang-vi" style="display:none;">Chúng tôi hỗ trợ giới thiệu thực tập sinh, lao động kỹ năng, mở rộng kinh doanh và đào tạo tại Việt Nam.</p>
+    <p class="lang-vi">Chúng tôi hỗ trợ giới thiệu thực tập sinh, lao động kỹ năng, mở rộng kinh doanh và đào tạo tại Việt Nam.</p>
   </section>
 
   <section id="candidate">
     <img src="section-candidate.png" alt="section-candidate">
     <h2 class="lang-ja">候補人材紹介</h2>
-    <h2 class="lang-vi" style="display:none;">Giới thiệu ứng viên</h2>
+    <h2 class="lang-vi">Giới thiệu ứng viên</h2>
     <p class="lang-ja">日本語力や実務経験のある人材を多数ご紹介できます。</p>
-    <p class="lang-vi" style="display:none;">Chúng tôi có thể giới thiệu nhiều ứng viên có khả năng tiếng Nhật và kinh nghiệm thực tế.</p>
+    <p class="lang-vi">Chúng tôi có thể giới thiệu nhiều ứng viên có khả năng tiếng Nhật và kinh nghiệm thực tế.</p>
   </section>
 
   <section id="about">
     <img src="section-about.png" alt="会社概要">
     <h2 class="lang-ja">会社概要</h2>
-    <h2 class="lang-vi" style="display:none;">Giới thiệu công ty</h2>
+    <h2 class="lang-vi">Giới thiệu công ty</h2>
     <p class="lang-ja">FV-HRグループは、信頼と実績をもとに日越間の人材交流を支援します。</p>
-    <p class="lang-vi" style="display:none;">FV-HR Group hỗ trợ kết nối nhân lực giữa Việt Nam và Nhật Bản với uy tín và thành tích thực tế.</p>
+    <p class="lang-vi">FV-HR Group hỗ trợ kết nối nhân lực giữa Việt Nam và Nhật Bản với uy tín và thành tích thực tế.</p>
   </section>
 
   <section id="flow">
     <img src="section-flow.jpg" alt="求人から採用までの流れ">
     <h2 class="lang-ja">求人から採用までの流れ</h2>
-    <h2 class="lang-vi" style="display:none;">Quy trình tuyển dụng</h2>
+    <h2 class="lang-vi">Quy trình tuyển dụng</h2>
     <p class="lang-ja">ご相談から人材紹介、面接、採用までワンストップでサポートいたします。</p>
-    <p class="lang-vi" style="display:none;">Tư vấn, giới thiệu, phỏng vấn và tuyển dụng - hỗ trợ toàn diện một cửa.</p>
+    <p class="lang-vi">Tư vấn, giới thiệu, phỏng vấn và tuyển dụng - hỗ trợ toàn diện một cửa.</p>
   </section>
 
   <section id="contact">
     <img src="section-contact.png" alt="お問い合わせ">
     <h2 class="lang-ja">お問い合わせ</h2>
-    <h2 class="lang-vi" style="display:none;">Liên hệ</h2>
+    <h2 class="lang-vi">Liên hệ</h2>
     <p class="lang-ja">ご希望の職種や人数など、お気軽にご相談ください。</p>
-    <p class="lang-vi" style="display:none;">Hãy liên hệ với chúng tôi về nhu cầu tuyển dụng của bạn.</p>
+    <p class="lang-vi">Hãy liên hệ với chúng tôi về nhu cầu tuyển dụng của bạn.</p>
     <a href="https://friday-vj.com/#contact" class="contact-button" target="_blank">お問い合わせ</a>
   </section>
 </body>
