@@ -75,12 +75,17 @@
     .banner-container {
       position: relative;
       width: 100%;
+      height: auto;
       overflow: hidden;
     }
     .banner-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: auto;
       display: none;
+      object-fit: cover;
     }
     .banner-container img.active {
       display: block;
@@ -103,8 +108,11 @@
     }
 
     document.addEventListener("DOMContentLoaded", function() {
-      document.querySelectorAll('.banner-container img')[0].classList.add('active');
-      setInterval(showNextBanner, 5000);
+      const banners = document.querySelectorAll('.banner-container img');
+      if (banners.length > 0) {
+        banners[0].classList.add('active');
+        setInterval(showNextBanner, 3000);
+      }
     });
   </script>
 </head>
