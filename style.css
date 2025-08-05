@@ -1,0 +1,36 @@
+
+body {
+    margin: 0;
+    font-family: "MS Gothic", sans-serif;
+    background-color: #fff8f0;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #b30000, #d4af37, #1c8b1c);
+    padding: 20px;
+    color: white;
+}
+
+.site-logo {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.site-title h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.site-title h2 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #fffcdd;
+}
+
+.subtitle {
+    font-size: 0.9em;
+    color: #ffffffcc;
+}
